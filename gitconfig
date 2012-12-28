@@ -1,0 +1,19 @@
+[user]
+	name = Bradley Schaefer
+	email = bradley.schaefer@gmail.com
+[alias]
+	co = checkout
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+  ui = auto
+[core]
+	excludesfile = ~/.gitignore
+	editor = vi
+	autocrlf = input
+[apply]
+	whitespace = nowarn
+[format]
+	pretty = short
