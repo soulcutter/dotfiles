@@ -11,6 +11,7 @@ gemrc
 gitconfig
 gitignore
 zshrc
+irbrc
 "
 
 # Create symbolic links for all configuration files
