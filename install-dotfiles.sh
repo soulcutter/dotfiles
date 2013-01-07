@@ -11,6 +11,7 @@ gemrc
 gitconfig
 gitignore
 zshrc
+zprofile
 irbrc
 "
 
