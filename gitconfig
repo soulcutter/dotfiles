@@ -13,6 +13,7 @@
 	excludesfile = ~/.gitignore
 	editor = vi
 	autocrlf = input
+	pager = less -FRX
 [apply]
 	whitespace = nowarn
 [format]
