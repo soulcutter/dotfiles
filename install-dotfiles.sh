@@ -13,6 +13,7 @@ gitignore
 zshrc
 zprofile
 irbrc
+aprc
 "
 
 # Create symbolic links for all configuration files

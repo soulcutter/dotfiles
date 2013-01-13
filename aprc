@@ -1,0 +1,6 @@
+AwesomePrint.defaults = {
+  :indent => 2,
+  :color => {
+    :fixnum => :cyan
+  }
+}
