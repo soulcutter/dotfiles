@@ -14,6 +14,7 @@ zshrc
 zprofile
 irbrc
 aprc
+oh-my-zsh/custom
 "
 
 # Create symbolic links for all configuration files
