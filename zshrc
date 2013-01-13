@@ -34,6 +34,7 @@ plugins=(git rvm vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+unsetopt correct_all # turn off autocorrect completely
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
