@@ -13,6 +13,7 @@ gitignore
 zshrc
 zprofile
 irbrc
+pryrc
 aprc
 oh-my-zsh/custom
 "
