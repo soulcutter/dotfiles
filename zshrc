@@ -29,7 +29,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm vagrant pow)
+plugins=(git rvm vagrant pow powify)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,3 +41,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
 
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_FREE_MIN=500000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=100000000
