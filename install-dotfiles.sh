@@ -14,6 +14,7 @@ zshrc
 zprofile
 irbrc
 pryrc
+rspec
 aprc
 oh-my-zsh/custom
 "
