@@ -14,5 +14,6 @@ function grabtemplates {
 
 alias ssh-bella="ssh bellababy@bellababy.stage.tablexi.com"
 alias ssh-bella-uat="ssh bellababyuat@bellababyuat.stage.tablexi.com"
+alias ssh-flow="ssh uncommonflow@uncommon-flow.stage.tablexi.com"
 alias migrate="rake db:migrate && rake db:test:prepare && annotate"
 
