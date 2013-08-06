@@ -21,7 +21,6 @@ tmux.conf
 "
 
 BIN="
-git-pull-request
 "
 
 # Create symbolic links for all configuration files
