@@ -16,7 +16,6 @@ irbrc
 pryrc
 rspec
 aprc
-oh-my-zsh/custom
 tmux.conf
 "
 
