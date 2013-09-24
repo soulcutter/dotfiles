@@ -25,6 +25,7 @@ oh-my-zsh/custom/explain.zsh
 "
 
 BIN="
+safe-reattach-to-user-namespace
 "
 
 # Create symbolic links for all configuration files
