@@ -8,6 +8,7 @@ fi
 
 FILES="
 gemrc
+gitattributes
 gitconfig
 gitignore
 zshrc
