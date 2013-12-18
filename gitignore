@@ -13,3 +13,5 @@ tmtags
 ## VIM
 *.swp
 
+## Misc Tools
+ngrok
