@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all # turn off autocorrect completely
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="/usr/local/bin:$PATH" # Add homebrew to PATH
 
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
