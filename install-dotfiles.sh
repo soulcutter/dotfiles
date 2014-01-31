@@ -17,6 +17,7 @@ irbrc
 rspec
 aprc
 tmux.conf
+vimrc
 oh-my-zsh/custom/cucumber.zsh
 oh-my-zsh/custom/git.zsh
 oh-my-zsh/custom/tablexi.zsh
