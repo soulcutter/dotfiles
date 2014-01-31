@@ -41,8 +41,6 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
 
@@ -51,3 +49,5 @@ export RUBY_HEAP_FREE_MIN=500000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
