@@ -12,7 +12,7 @@
   ui = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = vi
+	editor = vim
 	autocrlf = input
 	pager = less -FRX
 [apply]
