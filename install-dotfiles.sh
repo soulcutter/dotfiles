@@ -14,6 +14,7 @@ gitignore
 zshrc
 zprofile
 irbrc
+pryrc
 rspec
 aprc
 tmux.conf
