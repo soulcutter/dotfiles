@@ -14,6 +14,7 @@ gitignore
 zshrc
 zprofile
 irbrc
+powconfig
 pryrc
 rspec
 aprc
