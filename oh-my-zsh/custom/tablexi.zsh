@@ -28,5 +28,6 @@ alias ciw-prod-push='git push production master'
 alias ciw-prod-migrate='heroku run rake db:migrate --app chicagoideas'
 alias ciw-prod-restart='heroku restart --app chicagoideas'
 alias ciw-prod-sphinx='heroku run bundle exec flying-sphinx configure --app chicagoideas && heroku run bundle exec flying-sphinx rebuild --app chicagoideas'
+alias ciw-stage-sphinx='heroku run bundle exec flying-sphinx configure --app chicagoideas-staging && heroku run bundle exec flying-sphinx rebuild --app chicagoideas-staging'
 alias ciw-prod-deploy='ciw-prod-push && ciw-prod-migrate && ciw-prod-restart && ciw-prod-sphinx'
 
