@@ -1,5 +1,6 @@
 .idea/
 .DS_Store
+.powrc
 
 ## TEXTMATE
 *.tmproj
@@ -15,3 +16,4 @@ tmtags
 
 ## Misc Tools
 ngrok
+~/.ssh-logins
