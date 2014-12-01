@@ -23,6 +23,10 @@ alias ssh-push="ssh push@pushforwellness.stage.tablexi.com"
 
 alias gmaster='git checkout master && git merge develop && git push origin master'
 
+# npm / bower
+
+alias nombom="npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install"
+
 # CIW
 alias ciw-prod-push='git push production master'
 alias ciw-prod-migrate='heroku run rake db:migrate --app chicagoideas'
