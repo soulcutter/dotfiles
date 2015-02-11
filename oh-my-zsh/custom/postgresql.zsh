@@ -8,3 +8,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
   }
 fi
+
+alias my_pg_dump="pg_dump --no-owner --no-acl"
