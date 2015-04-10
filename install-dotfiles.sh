@@ -26,7 +26,7 @@ oh-my-zsh/custom/login.zsh
 oh-my-zsh/custom/tablexi.zsh
 oh-my-zsh/custom/openssl.zsh
 oh-my-zsh/custom/explain.zsh
-oh-my-zsh/custom/services.zsh
+oh-my-zsh/custom/postgresql.zsh
 "
 
 BIN="
