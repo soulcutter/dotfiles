@@ -5,11 +5,16 @@
 	co = checkout
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 	prune = remote prune origin
+	tidy = "!f() { \
+		local branch="${1-develop}"; \
+		echo "Pruning branches that are already merged into $branch..."; \
+		git remote prune origin && git branch --merged "$branch" | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v " $branch" | xargs -n 1 git branch -d; \
+	}; f" 
 [color]
 	diff = auto
 	status = auto
 	branch = auto
-  ui = auto
+	ui = auto
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
