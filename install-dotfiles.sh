@@ -6,9 +6,12 @@ if ! [ -d ~/.oh-my-zsh ]; then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 fi
 
+# Set up directories
+mkdir -p ~/.config/git
+
 FILES="
 gemrc
-gitattributes
+config/git/attributes
 gitconfig
 gitignore
 zshrc
@@ -30,6 +33,7 @@ oh-my-zsh/custom/postgresql.zsh
 "
 
 BIN="
+resolve-schema
 safe-reattach-to-user-namespace
 "
 
