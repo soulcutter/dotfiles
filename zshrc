@@ -44,13 +44,4 @@ fi
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
 
-# Ruby performance gc tuning
-# cargo-culted from http://stackoverflow.com/a/22003054/1819614
-export RUBY_GC_HEAP_INIT_SLOTS=1000000 # 1M
-export RUBY_GC_HEAP_FREE_SLOTS=500000  # 0.5M
-export RUBY_GC_HEAP_GROWTH_FACTOR=1.1
-export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=10000000 # 10M
-export RUBY_GC_MALLOC_LIMIT_MAX=1000000000    # 1G
-export RUBY_GC_MALLOC_LIMIT_GROWTH_FACTOR=1.1
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
