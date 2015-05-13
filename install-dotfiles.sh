@@ -22,6 +22,8 @@ pryrc
 rspec
 aprc
 tmux.conf
+tmux-linux
+tmux-osx
 vimrc
 oh-my-zsh/custom/cucumber.zsh
 oh-my-zsh/custom/git.zsh

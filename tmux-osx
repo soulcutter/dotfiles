@@ -1,0 +1,6 @@
+# Mac OS X fix for pbcopy, pbpaste, and launchctl
+set-option -g default-command "safe-reattach-to-user-namespace -l $SHELL"
+
+# Use vim-like bindings for begin selection 'v' and copy 'y'
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "safe-reattach-to-user-namespace pbcopy"
