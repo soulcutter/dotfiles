@@ -1,4 +1,4 @@
 # Use vim-like bindings for begin selection 'v' and copy 'y'
 bind-key -t vi-copy v begin-selection
-# bind-key -t vi-copy y copy
 bind-key -t vi-copy y copy-pipe "xclip -i -sel p -f | xclip -i -sel c "
+bind-key P run-shell "xclip -o | tmux load-buffer - ; tmux paste-buffer" 
