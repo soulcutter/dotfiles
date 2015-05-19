@@ -25,7 +25,6 @@ tmux.conf
 tmux-linux
 tmux-osx
 vimrc
-oh-my-zsh/custom/cucumber.zsh
 oh-my-zsh/custom/git.zsh
 oh-my-zsh/custom/login.zsh
 oh-my-zsh/custom/tablexi.zsh
