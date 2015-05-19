@@ -14,8 +14,7 @@ function add-login() {
 }
 
 function get-login() {
-  local access=( `grep -E "^$1 " ~/.ssh-logins` )
-  echo ${access[1]}
+  grep -E "^$1 " ~/.ssh-logins | awk '{ print $2 }'
 }
 
 function login() {
