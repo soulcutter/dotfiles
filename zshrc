@@ -44,4 +44,9 @@ fi
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
 
+# -F Exit immediately if content fits in a single page
+# -R Colorize `less` output instead of printing color codes
+# -X Prevent clear screen on init/exit
+export LESS="-FRX"
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
