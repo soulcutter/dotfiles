@@ -35,3 +35,5 @@ alias ciw-prod-sphinx='heroku run bundle exec flying-sphinx configure --app chic
 alias ciw-stage-sphinx='heroku run bundle exec flying-sphinx configure --app chicagoideas-staging && heroku run bundle exec flying-sphinx rebuild --app chicagoideas-staging'
 alias ciw-prod-deploy='ciw-prod-push && ciw-prod-migrate && ciw-prod-restart && ciw-prod-sphinx'
 
+# D1
+export DYNAMO_LOCAL_PATH="${HOME}/Library/DynamoDB/current"
