@@ -44,6 +44,10 @@ fi
 export ANT_OPTS="-Xmx2048m"
 export MAVEN_REPOSITORY="~/.m2"
 
+if uname | grep -q Darwin ; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # -F Exit immediately if content fits in a single page
 # -R Colorize `less` output instead of printing color codes
 # -X Prevent clear screen on init/exit
