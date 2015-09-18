@@ -62,6 +62,10 @@ do
       ln -hfsv "$SOURCE" "$TARGET"
       ;;
     linux*)
+      # force unlinking because OSX's -h option is not portable
+      if [ -L "$TARGET" ]; then
+        unlink "$TARGET"
+      fi
       ln -fsv "$SOURCE" "$TARGET"
       ;;
   esac
