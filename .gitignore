@@ -1,0 +1,3 @@
+tmux/plugins
+tmux/resurrect
+!tmux/plugins/tpm

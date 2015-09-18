@@ -5,6 +5,9 @@
 	co = checkout
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 	prune = remote prune origin
+  sinit = submodule update --init --recursive
+  spush = push --recurse-submodules=on-demand
+  supdate = submodule update --remote --merge
 	tidy = "!f() { \
 		local branch="${1-develop}"; \
 		echo "Pruning branches that are already merged into $branch..."; \

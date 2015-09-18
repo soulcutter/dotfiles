@@ -6,6 +6,10 @@ if ! [ -d ~/.oh-my-zsh ]; then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 fi
 
+# Make sure submodules are init
+echo "initializing submodules..."
+git submodule update --init --recursive > /dev/null
+
 # Set up directories
 mkdir -p ~/.config/git
 
@@ -21,6 +25,7 @@ powconfig
 pryrc
 rspec
 aprc
+tmux
 tmux.conf
 tmux-linux
 tmux-osx
@@ -40,6 +45,7 @@ safe-reattach-to-user-namespace
 "
 
 # Create symbolic links for all configuration files
+echo "symlinking dotfiles to $HOME"
 for file in $FILES
 do
   SOURCE="$HOME/dotfiles/$file"
