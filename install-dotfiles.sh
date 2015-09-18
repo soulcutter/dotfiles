@@ -8,7 +8,7 @@ fi
 
 # Make sure submodules are init
 echo "initializing submodules..."
-git submodule update --init --recursive > /dev/null
+git submodule update --quiet --init --recursive > /dev/null
 
 # Set up directories
 mkdir -p ~/.config/git
