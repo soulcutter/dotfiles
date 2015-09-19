@@ -9,6 +9,7 @@ set nobackup                    " Do not automatically backup files
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set history=1000                " Remember 1000 lines of command line history
+set number                      " Enable line numbers
 
 " Whitespace
 " --------------------
