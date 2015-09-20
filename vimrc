@@ -7,9 +7,14 @@ set encoding=utf-8
 set autoread                    " Automatically reload when a file is changed outside of Vim
 set nobackup                    " Do not automatically backup files
 set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
 set history=1000                " Remember 1000 lines of command line history
 set number                      " Enable line numbers
+
+" File Editing
+" --------------------
+filetype plugin indent on       " load file type plugins + indentation
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+                                " Disable auto-commenting subsequent comment lines
 
 " Whitespace
 " --------------------
