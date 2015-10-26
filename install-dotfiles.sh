@@ -37,6 +37,7 @@ oh-my-zsh/custom/tablexi.zsh
 oh-my-zsh/custom/openssl.zsh
 oh-my-zsh/custom/explain.zsh
 oh-my-zsh/custom/postgresql.zsh
+oh-my-zsh/custom/pyg.zsh
 "
 
 BIN="
