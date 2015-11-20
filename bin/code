@@ -1,0 +1,25 @@
+#!/bin/bash
+
+name=$1
+dir="$HOME/Projects/$name"
+
+if ! [ -d "$dir" ]; then
+  name="tablexi/$name"
+  dir="$HOME/Projects/$name"
+fi
+if ! [ -d "$dir" ]; then
+  echo "$name project not found"
+  exit 1
+fi
+
+cd $dir
+
+if !(tmux has-session -t "$name" 2> /dev/null); then
+  tmux start                     \;\
+    set -g set-remain-on-exit on \;\
+    new-session -d -s $name
+fi
+
+tmux source-file "$HOME/.tmux.conf"
+tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
+tmux attach -t $name

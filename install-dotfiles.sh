@@ -41,6 +41,7 @@ oh-my-zsh/custom/pyg.zsh
 "
 
 BIN="
+code
 resolve-schema
 safe-reattach-to-user-namespace
 "
