@@ -2,6 +2,7 @@
 .DS_Store
 .powrc
 .powenv
+.ruby-gemset
 
 ## TEXTMATE
 *.tmproj
