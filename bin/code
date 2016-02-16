@@ -20,6 +20,6 @@ if !(tmux has-session -t "$name" 2> /dev/null); then
     new-session -d -s $name
 fi
 
-tmux source-file "$HOME/.tmux.conf"
-tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
+[ -f "$HOME/.tmux.conf" ] && tmux source-file "$HOME/.tmux.conf"
+[ -f "$HOME/.tmux/profiles/$name.tmuxrc" ] && tmux source-file "$HOME/.tmux/profiles/$name.tmuxrc"
 tmux attach -t $name
