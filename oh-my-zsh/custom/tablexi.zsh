@@ -12,13 +12,6 @@ function grabtemplates {
   done
 }
 
-# SSH shortcuts 
-alias ssh-bella="ssh bellababy@bellababy.stage.tablexi.com"
-alias ssh-bella-uat="ssh bellababyuat@bellababyuat.stage.tablexi.com"
-alias ssh-flow="ssh uncommonflow@uncommon-flow.stage.tablexi.com"
-alias ssh-dickson="ssh viewmydata@viewmydata.stage.tablexi.com"
-alias ssh-push="ssh push@pushforwellness.stage.tablexi.com"
-
 # git related
 
 alias gmaster='git checkout master && git merge develop && git push origin master'
