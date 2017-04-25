@@ -29,7 +29,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm vagrant pow powify ssh-agent history-substring-search)
+plugins=(git rvm vagrant ssh-agent history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,11 +46,16 @@ export MAVEN_REPOSITORY="~/.m2"
 
 if uname | grep -q Darwin ; then
   export JAVA_HOME=$(/usr/libexec/java_home)
+  export EVENT_NOKQUEUE=1
 fi
 
 # -F Exit immediately if content fits in a single page
 # -R Colorize `less` output instead of printing color codes
 # -X Prevent clear screen on init/exit
 export LESS="-FRX"
+
+export EDITOR="vim"
+
+export AWS_REGION="us-east-1"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
