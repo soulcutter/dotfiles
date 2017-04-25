@@ -17,12 +17,24 @@
 	diff = auto
 	status = auto
 	branch = auto
-	ui = auto
+  ui = auto
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
 	autocrlf = input
-	pager = less -FRX
+  pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less -FRX
 [apply]
 	whitespace = nowarn
 [format]
@@ -35,3 +47,5 @@
 	driver = resolve-schema %A %O %B %L 
 [heroku]
 	account = txi
+[diff]
+	compactionHeuristic = true
