@@ -5,14 +5,19 @@
 	co = checkout
 	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 	prune = remote prune origin
-  sinit = submodule update --init --recursive
-  spush = push --recurse-submodules=on-demand
-  supdate = submodule update --remote --merge
+	sinit = submodule update --init --recursive
+	spush = push --recurse-submodules=on-demand
+	supdate = submodule update --remote --merge
 	tidy = "!f() { \
 		local branch="${1-develop}"; \
 		echo "Pruning branches that are already merged into $branch..."; \
 		git remote prune origin && git branch --merged "$branch" | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v " $branch" | xargs -n 1 git branch -d; \
 	}; f" 
+	touched = show --name-only --pretty=format: --relative
+	conflicts = !git ls-files -u | cut -f2 | sort -u
+	staged = diff --cached --name-only --relative
+	untracked = ls-files --others --exclude-standard
+	modified = ls-files --modified --exclude-standard
 [color]
 	diff = auto
 	status = auto
