@@ -6,6 +6,13 @@ if ! [ -d ~/.oh-my-zsh ]; then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 fi
 
+# Install Vundle
+if ! [ -d ~/.vim/bundle ]; then
+  echo "Vundle (vim package manager) not detected - installing now..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+vim +PluginInstall +qall # install Vundle vim plugins
+
 # Make sure submodules are init
 echo "initializing submodules..."
 git submodule update --quiet --init --recursive > /dev/null
