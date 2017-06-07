@@ -58,4 +58,9 @@ export EDITOR="vim"
 
 export AWS_REGION="us-east-1"
 
+if [ -x "$(command -v hub)" ]; then
+  eval "$(hub alias -s)" # Aliases 'git' to the 'hub' command
+fi
+
+PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
