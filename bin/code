@@ -16,7 +16,6 @@ cd $dir
 
 if !(tmux has-session -t "$name" 2> /dev/null); then
   tmux start                     \;\
-    set -g set-remain-on-exit on \;\
     new-session -d -s $name
 fi
 
