@@ -9,7 +9,7 @@
 	spush = push --recurse-submodules=on-demand
 	supdate = submodule update --remote --merge
 	tidy = "!f() { \
-		local branch="${1-develop}"; \
+		local branch="${1-master}"; \
 		echo "Pruning branches that are already merged into $branch..."; \
 		git remote prune origin && git branch --merged "$branch" | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v " $branch" | xargs -n 1 git branch -d; \
 	}; f" 
