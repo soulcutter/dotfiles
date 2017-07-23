@@ -4,17 +4,13 @@ name=$1
 dir="$HOME/Projects/$name"
 
 if ! [ -d "$dir" ]; then
-  name="tablexi/$name"
-  dir="$HOME/Projects/$name"
-fi
-if ! [ -d "$dir" ]; then
   echo "$name project not found"
   exit 1
 fi
 
-cd $dir
+cd "$dir"
 
-if !(tmux has-session -t "$name" 2> /dev/null); then
+if ! (tmux has-session -t "$name" 2> /dev/null); then
   tmux start                     \;\
     new-session -d -s $name
 fi
