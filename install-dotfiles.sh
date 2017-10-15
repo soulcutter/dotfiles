@@ -40,11 +40,11 @@ vimrc
 oh-my-zsh/custom/filesystem.zsh
 oh-my-zsh/custom/git.zsh
 oh-my-zsh/custom/login.zsh
-oh-my-zsh/custom/tablexi.zsh
 oh-my-zsh/custom/openssl.zsh
 oh-my-zsh/custom/explain.zsh
 oh-my-zsh/custom/postgresql.zsh
 oh-my-zsh/custom/pyg.zsh
+oh-my-zsh/custom/misc.zsh
 "
 
 BIN="
