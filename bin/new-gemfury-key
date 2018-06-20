@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Usage:
+# new-gemfury-key abcef-new-key-xyz
+
+old_fury_url=$(gem sources | grep fury)
+if [ -n "$old_fury_url" ]
+then
+  gem sources -r "$old_fury_url"
+fi
+bundle config https://gem.fury.io/me/ "$1"
+gem sources -a "https://$1@gem.fury.io/me/"

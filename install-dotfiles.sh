@@ -37,47 +37,44 @@ tmux.conf
 tmux-linux
 tmux-osx
 vimrc
-oh-my-zsh/custom/filesystem.zsh
-oh-my-zsh/custom/git.zsh
-oh-my-zsh/custom/login.zsh
-oh-my-zsh/custom/openssl.zsh
-oh-my-zsh/custom/explain.zsh
-oh-my-zsh/custom/postgresql.zsh
-oh-my-zsh/custom/pyg.zsh
-oh-my-zsh/custom/misc.zsh
+oh-my-zsh/custom/*.zsh
 "
 
 BIN="
 code
+new-gemfury-key
 resolve-schema
 safe-reattach-to-user-namespace
 "
 
 # Create symbolic links for all configuration files
 echo "symlinking dotfiles to $HOME"
-for file in $FILES
+for file_pattern in $FILES
 do
-  SOURCE="$HOME/dotfiles/$file"
-  TARGET="$HOME/.$file"
+  for file in ${file_pattern}; do
+    [ -e "$file" ] || continue
+    SOURCE="$HOME/dotfiles/$file"
+    TARGET="$HOME/.$file"
 
-  # Create backup file if the target already exists and is not a symlink
-  if [ -e "$TARGET" ] && [ ! -L "$TARGET" ]; then
-    echo "*** WARNING *** $TARGET already exists - copying original to .$file.old"
-    mv "$TARGET" "$TARGET.old"
-  fi
+    # Create backup file if the target already exists and is not a symlink
+    if [ -e "$TARGET" ] && [ ! -L "$TARGET" ]; then
+      echo "*** WARNING *** $TARGET already exists - copying original to .$file.old"
+      mv "$TARGET" "$TARGET.old"
+    fi
 
-  case $OSTYPE in
-    darwin*)
-      ln -hfsv "$SOURCE" "$TARGET"
-      ;;
-    linux*)
-      # force unlinking because OSX's -h option is not portable
-      if [ -L "$TARGET" ]; then
-        unlink "$TARGET"
-      fi
-      ln -fsv "$SOURCE" "$TARGET"
-      ;;
-  esac
+    case $OSTYPE in
+      darwin*)
+        ln -hfsv "$SOURCE" "$TARGET"
+        ;;
+      linux*)
+        # force unlinking because OSX's -h option is not portable
+        if [ -L "$TARGET" ]; then
+          unlink "$TARGET"
+        fi
+        ln -fsv "$SOURCE" "$TARGET"
+        ;;
+    esac
+  done
 done
 
 # Create symbolic links for all bin files
