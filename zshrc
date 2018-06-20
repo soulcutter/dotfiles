@@ -58,9 +58,14 @@ export EDITOR="vim"
 
 export AWS_REGION="us-east-1"
 
+# When you don't prefer fuzzy matching and do not wish to "quote" every word
+export FZF_DEFAULT_OPTS="--exact --height 80% --reverse"
+
 if [ -x "$(command -v hub)" ]; then
   eval "$(hub alias -s)" # Aliases 'git' to the 'hub' command
 fi
 
 PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
