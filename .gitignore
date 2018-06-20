@@ -1,3 +1,4 @@
 tmux/plugins
 tmux/resurrect
 !tmux/plugins/tpm
+oh-my-zsh/custom/credentials.zsh
