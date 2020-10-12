@@ -29,7 +29,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm vagrant ssh-agent history-substring-search)
+plugins=(git ssh-agent history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,6 +66,5 @@ if [ -x "$(command -v hub)" ]; then
 fi
 
 PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh" # asdf version manager needs this I guess
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
