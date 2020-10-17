@@ -3,6 +3,9 @@
 .powrc
 .powenv
 
+## asdf version manager
+.tool-versions
+
 ## TEXTMATE
 *.tmproj
 tmtags
