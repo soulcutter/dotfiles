@@ -11,7 +11,7 @@
 	tidy = "!f() { \
 		local branch="${1-master}"; \
 		echo "Pruning branches that are already merged into $branch..."; \
-		git remote prune origin && git branch --merged "$branch" | grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn} -v " $branch" | xargs -n 1 git branch -d; \
+		git remote prune origin && git branch --merged "$branch" | grep -v " $branch" | xargs -n 1 git branch -d; \
 	}; f" 
 	touched = show --name-only --pretty=format: --relative
 	conflicts = !git ls-files -u | cut -f2 | sort -u
@@ -47,11 +47,6 @@
 [merge "bundle"]
   name = bundle
   driver = bundle
-[merge "railsschema"]
-	name = newer Rails schema version
-	driver = resolve-schema %A %O %B %L 
-[heroku]
-	account = txi
 [diff]
 	compactionHeuristic = true
 [filter "lfs"]
@@ -59,3 +54,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[pull]
+	ff = only
