@@ -1,6 +1,11 @@
 #!/usr/bin/ruby
 require 'irb/completion'
-require 'irb/ext/save-history'
+
+# This is the old require location
+# require 'irb/ext/save-history' rescue LoadError
+
+# This is the modern require location
+require 'irb/ext/eval_history'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"

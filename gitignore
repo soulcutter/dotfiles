@@ -22,3 +22,5 @@ tmtags
 ngrok
 ~/.ssh-logins
 nohup.out
+
+.reek.yml

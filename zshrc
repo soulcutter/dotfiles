@@ -26,10 +26,18 @@ ZSH_THEME="robbyrussell"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+export HISTCONTROL="ignoreboth"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent history-substring-search)
+if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+  plugins=(git ssh-agent history-substring-search)
+else
+  # remove ssh-agent since it breaks Jetbrains shell integration
+  # since it interactively prompts for ssh key passwords
+  plugins=(git history-substring-search)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +55,8 @@ export MAVEN_REPOSITORY="~/.m2"
 if uname | grep -q Darwin ; then
   export JAVA_HOME=$(/usr/libexec/java_home)
   export EVENT_NOKQUEUE=1
+  export HOMEBREW_NO_GOOGLE_ANALYTICS=1
+  export HOMEBREW_NO_ANALYTICS=1
 fi
 
 # -F Exit immediately if content fits in a single page
