@@ -55,4 +55,10 @@
 	required = true
 	clean = git-lfs clean -- %f
 [pull]
-	ff = only
+  ff = only
+[push]
+  autoSetupRemote = true
+[init]
+	defaultBranch = main
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
