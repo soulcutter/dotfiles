@@ -41,8 +41,6 @@ oh-my-zsh/custom/*.zsh
 "
 
 BIN="
-code
-new-gemfury-key
 resolve-schema
 safe-reattach-to-user-namespace
 "
