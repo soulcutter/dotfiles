@@ -32,11 +32,11 @@ export HISTCONTROL="ignoreboth"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-  plugins=(git ssh-agent history-substring-search)
+  plugins=(git ssh-agent history-substring-search asdf)
 else
   # remove ssh-agent since it breaks Jetbrains shell integration
   # since it interactively prompts for ssh key passwords
-  plugins=(git history-substring-search)
+  plugins=(git history-substring-search asdf)
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -55,9 +55,11 @@ export MAVEN_REPOSITORY="~/.m2"
 if uname | grep -q Darwin ; then
   export JAVA_HOME=$(/usr/libexec/java_home)
   export EVENT_NOKQUEUE=1
-  export HOMEBREW_NO_GOOGLE_ANALYTICS=1
   export HOMEBREW_NO_ANALYTICS=1
+  export HOMEBREW_NO_ENV_HINTS=1
 fi
+
+export PACT_DO_NOT_TRACK=true
 
 # -F Exit immediately if content fits in a single page
 # -R Colorize `less` output instead of printing color codes
@@ -70,11 +72,15 @@ export AWS_REGION="us-east-1"
 
 # When you don't prefer fuzzy matching and do not wish to "quote" every word
 export FZF_DEFAULT_OPTS="--exact --height 80% --reverse"
+source <(fzf --zsh)
 
 if [ -x "$(command -v hub)" ]; then
   eval "$(hub alias -s)" # Aliases 'git' to the 'hub' command
 fi
 
-PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
+# PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
 [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh" # asdf version manager needs this I guess
+[ -f "$HOME/.asdf/plugins/golang/set-env.zsh" ] && . "$HOME/.asdf/plugins/golang/set-env.zsh"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+export PATH="/opt/homebrew/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
