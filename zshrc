@@ -31,13 +31,7 @@ export HISTCONTROL="ignoreboth"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-  plugins=(git ssh-agent history-substring-search asdf)
-else
-  # remove ssh-agent since it breaks Jetbrains shell integration
-  # since it interactively prompts for ssh key passwords
-  plugins=(git history-substring-search asdf)
-fi
+plugins=(git history-substring-search asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,10 +67,6 @@ export AWS_REGION="us-east-1"
 # When you don't prefer fuzzy matching and do not wish to "quote" every word
 export FZF_DEFAULT_OPTS="--exact --height 80% --reverse"
 source <(fzf --zsh)
-
-if [ -x "$(command -v hub)" ]; then
-  eval "$(hub alias -s)" # Aliases 'git' to the 'hub' command
-fi
 
 # PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
 [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh" # asdf version manager needs this I guess
