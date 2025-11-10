@@ -72,14 +72,8 @@ source <(fzf --zsh)
 # you'd think the oh-my-zsh mise plugin would always do this
 # but it seems like not
 if command -v mise &> /dev/null; then
-  mise activate &> /dev/null
+  exec $(mise activate zsh)
 fi
-
-# the oh-my-zsh asdf plugin should be doing this, 
-# but possibly a bug as of 2025-02-25 that it isn't?
-# https://github.com/ohmyzsh/ohmyzsh/pull/12964#issuecomment-2682710583
-#export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
-#export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 [ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
 # [ -f "$HOME/.asdf/plugins/golang/set-env.zsh" ] && . "$HOME/.asdf/plugins/golang/set-env.zsh"
