@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 function op_login() {
   op_login_github
   op_login_npm
@@ -7,24 +9,30 @@ function op_login() {
 function op_login_github() {
   # Export GitHub credentials
   echo "[op_login_github] Setting up GitHub credentials from 1Password..."
-  export GITHUB_TOKEN=`op read "op://Private/GitHub Personal Access Token/token"`
-  export GH_TOKEN=`op read "op://Private/GitHub Personal Access Token/token"`
-  export GH_USERNAME=`op read "op://Private/GitHub Personal Access Token/username"`
+  GITHUB_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token")
+  GH_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token")
+  GH_USERNAME=$(op read "op://Private/GitHub Personal Access Token/username")
+  export GITHUB_TOKEN
+  export GH_TOKEN
+  export GH_USERNAME
   echo "[op_login_github] Setup Complete."
 }
 
 function op_login_npm() {
   # Export NPM token
   echo "[op_login_npm] Setting up NPM credentials from 1Password..."
-  export NPM_TOKEN=`op read "op://Private/Npmjs/token"`
+  NPM_TOKEN=$(op read "op://Private/Npmjs/token")
+  export NPM_TOKEN
   echo "[op_login_npm] Setup Complete."
 }
 
 function op_login_datadog() {
   # Export Datadog API and application keys
   echo "[op_login_datadog] Setting up DataDog API credentials from 1Password..."
-  export DD_APP_KEY=`op read "op://Private/Datadog/Application Key"`
-  export DD_API_KEY=`op read "op://Private/Datadog/Api Key"`
+  DD_APP_KEY=$(op read "op://Private/Datadog/Application Key")
+  DD_API_KEY=$(op read "op://Private/Datadog/Api Key")
+  export DD_APP_KEY
+  export DD_API_KEY
   echo "[op_login_datadog] Setup Complete."
 }
 
