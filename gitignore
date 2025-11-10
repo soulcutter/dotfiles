@@ -7,6 +7,9 @@
 ## asdf version manager
 .tool-versions
 
+## mise version manager
+mise.toml
+
 ## TEXTMATE
 *.tmproj
 tmtags

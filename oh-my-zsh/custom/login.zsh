@@ -1,4 +1,8 @@
 
+alias op_login='op_login_github && op_login_npm'
+alias op_login_github='export GITHUB_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token") GH_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token") GH_USERNAME=$(op read "op://Private/GitHub Personal Access Token/username")'
+alias op_login_npm='export NPM_TOKEN=$(op read "op://Private/Npmjs/token")'
+
 function add-login() {
   if grep -qsE "^$1" .ssh-logins; then
     sed -i "" -e "s/`grep -E "^$1 " ~/.ssh-logins`/$*/" ~/.ssh-logins

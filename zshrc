@@ -31,7 +31,7 @@ export HISTCONTROL="ignoreboth"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search asdf)
+plugins=(git history-substring-search mise)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,9 +68,33 @@ export AWS_REGION="us-east-1"
 export FZF_DEFAULT_OPTS="--exact --height 80% --reverse"
 source <(fzf --zsh)
 
-# PATH=$PATH:/usr/local/sbin # add sbin to PATH for rabbitmq-server
-[ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh" # asdf version manager needs this I guess
-[ -f "$HOME/.asdf/plugins/golang/set-env.zsh" ] && . "$HOME/.asdf/plugins/golang/set-env.zsh"
+# Activate mise automatically
+# you'd think the oh-my-zsh mise plugin would always do this
+# but it seems like not
+if command -v mise &> /dev/null; then
+  mise activate &> /dev/null
+fi
+
+# the oh-my-zsh asdf plugin should be doing this, 
+# but possibly a bug as of 2025-02-25 that it isn't?
+# https://github.com/ohmyzsh/ohmyzsh/pull/12964#issuecomment-2682710583
+#export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+#export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+[ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
+# [ -f "$HOME/.asdf/plugins/golang/set-env.zsh" ] && . "$HOME/.asdf/plugins/golang/set-env.zsh"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 export PATH="/opt/homebrew/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix curl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig"
+
+# For compilers to find libpq (postgres client libraries) you may need to set:
+# export LDFLAGS="-L$(brew --prefix libpq)/lib"
+# export CPPFLAGS="-I$(brew --prefix libpq)/include"
+# export PATH="$(brew --prefix libpq)/bin:$PATH"
+
+# For pkg-config to find libpq you may need to set:
+# export PKG_CONFIG_PATH="$(brew --prefix libpq)/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+if [[ -d "$HOME/projects" ]]; then
+  export CDPATH=".:$HOME/projects"
+fi
