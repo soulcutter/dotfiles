@@ -31,7 +31,7 @@ export HISTCONTROL="ignoreboth"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search mise)
+plugins=(git history-substring-search mise uv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,6 +63,7 @@ export LESS="-FRX"
 export EDITOR="vim"
 
 export AWS_REGION="us-east-1"
+export AWS_DEFAULT_REGION="us-east-1"
 
 # When you don't prefer fuzzy matching and do not wish to "quote" every word
 export FZF_DEFAULT_OPTS="--exact --height 80% --reverse"
@@ -72,7 +73,7 @@ source <(fzf --zsh)
 # you'd think the oh-my-zsh mise plugin would always do this
 # but it seems like not
 if command -v mise &> /dev/null; then
-  exec $(mise activate zsh)
+  eval "$(mise activate zsh)"
 fi
 
 [ -f "$HOME/.config/op/plugins.sh" ] && source "$HOME/.config/op/plugins.sh"
