@@ -93,3 +93,4 @@ export PKG_CONFIG_PATH="/opt/homebrew/bin/pkg-config:$(brew --prefix icu4c)/lib/
 if [[ -d "$HOME/projects" ]]; then
   export CDPATH=".:$HOME/projects"
 fi
+
