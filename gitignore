@@ -1,8 +1,14 @@
+## AI tool junk
+.agents/
+.cursor/
+
+## IDE junk
 .idea/
 .vscode/
+.vscode/settings.json
+
+## OSX Junk
 .DS_Store
-.powrc
-.powenv
 
 ## asdf version manager
 .tool-versions
@@ -26,5 +32,7 @@ tmtags
 ngrok
 ~/.ssh-logins
 nohup.out
-
+/.jj
 .reek.yml
+
+**/.claude/settings.local.json
