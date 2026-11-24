@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
 
-# Enable 1Password CLI plugins if available
-if [[ -f $HOME/.config/op/plugins.sh ]]; then
-  source $HOME/.config/op/plugins.sh
-fi
+# Checks if a 1Password CLI plugin is initialized
+function op_plugin_configured() {
+  local dir="${OP_PLUGIN_CONFIG_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/op}/plugins"
+  [[ -s "$dir/$1.json" ]]
+}
 
 function op_login() {
   op_login_github
@@ -26,12 +27,26 @@ function op_login_circleci() {
 function op_login_github() {
   # Export GitHub credentials
   echo "[op_login_github] Setting up GitHub credentials from 1Password..."
-  GITHUB_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token")
-  GH_TOKEN=$(op read "op://Private/GitHub Personal Access Token/token")
+
+  if op_plugin_configured gh; then
+    if [[ "$(whence -w gh 2>/dev/null)" == *function ]]; then
+      echo "[op_login_github]   1Password gh plugin is configured and aliases are sourced"
+    else
+      echo "[op_login_github]   1Password gh plugin is configured, but the gh wrapper is not loaded"
+      echo "[op_login_github]   Consider running: source \"\${HOME}/.config/op/plugins.sh\""
+    fi
+  else
+    echo "[op_login_github]   1Password gh plugin is not configured"
+    echo "[op_login_github]   Consider running: op plugin init gh"
+  fi
+
+  GITHUB_TOKEN=$(op read "op://Private/GitHub Personal Access Token/credential")
+  GH_TOKEN=$(op read "op://Private/GitHub Personal Access Token/credential")
   GH_USERNAME=$(op read "op://Private/GitHub Personal Access Token/username")
   export GITHUB_TOKEN
   export GH_TOKEN
   export GH_USERNAME
+
   echo "[op_login_github] Setup Complete."
 }
 
